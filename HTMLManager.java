@@ -63,9 +63,11 @@ public class HTMLManager {
                 }
             }    
         }
-        
-        
-        
+        //add missing matching tags for unclosed elements in stack
+         while (!stack.isEmpty()) {
+            HTMLTag leftover = stack.pop();
+            fixedQueue.add(leftover.getMatching());
+        }
 
         tags = fixedQueue;
     }    

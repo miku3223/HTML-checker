@@ -76,13 +76,12 @@ public class HTMLChecker {
 
 /*
 
-
  ===============================
  Processing tests/test1.html...
  ===============================
  HTML: <b><i><br /></b></i>
  Checking HTML for errors...
- HTML after fix: <b><i><br /></b></i>
+ HTML after fix: <b><i><br />
  ----> Something isn't working right! 
  Fixed HTML should be: 
  <b><i><br /></i></b>
@@ -92,7 +91,7 @@ public class HTMLChecker {
  ===============================
  HTML: <a><a><a></a>
  Checking HTML for errors...
- HTML after fix: <a><a><a></a>
+ HTML after fix: <a><a><a>
  ----> Something isn't working right! 
  Fixed HTML should be: 
  <a><a><a></a></a></a>
@@ -102,17 +101,15 @@ public class HTMLChecker {
  ===============================
  HTML: <br /></p></p>
  Checking HTML for errors...
- HTML after fix: <br /></p></p>
- ----> Something isn't working right! 
- Fixed HTML should be: 
- <br />
+ HTML after fix: <br />
+ ----> Result matches Expected Output!
  
  ===============================
  Processing tests/test4.html...
  ===============================
  HTML: <div><div><ul><li></li><li></li><li></ul></div>
  Checking HTML for errors...
- HTML after fix: <div><div><ul><li></li><li></li><li></ul></div>
+ HTML after fix: <div><div><ul><li><li><li>
  ----> Something isn't working right! 
  Fixed HTML should be: 
  <div><div><ul><li></li><li></li><li></li></ul></div></div>
@@ -122,13 +119,14 @@ public class HTMLChecker {
  ===============================
  HTML: <div><h1></h1><div><img /><p><br /><br /><br /></div></div></table>
  Checking HTML for errors...
- HTML after fix: <div><h1></h1><div><img /><p><br /><br /><br /></div></div></table>
+ HTML after fix: <div><h1><div><img /><p><br /><br /><br />
  ----> Something isn't working right! 
  Fixed HTML should be: 
  <div><h1></h1><div><img /><p><br /><br /><br /></p></div></div>
  
  ===============================
- Failed tests: test1.html test2.html test3.html test4.html test5.html 
+ Failed tests: test1.html test2.html test4.html test5.html 
  ===============================
  
-*/
+
+ */
