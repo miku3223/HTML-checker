@@ -40,14 +40,28 @@ public class HTMLManager {
         
         while (!tags.isEmpty()) {
             HTMLTag current = tags.remove();
-
+            //check Selfclosing
             if (current.isSelfClosing()) {
                 fixedQueue.add(current);
+            //check opening
             } else if (current.isOpening()) {
                 fixedQueue.add(current);
                 stack.push(current);
-            } 
-        
+            
+            //check closing
+            } else if(current.isClosing()) {
+                //add matching close
+                if (!stack.isEmpty() && stack.peek().matches(current)) {
+                    fixedQueue.add(current);
+                    stack.pop();
+                } else if (!stack.isEmpty()) {
+                    // mismatched closing tag
+                    HTMLTag correctClose = stack.pop().getMatching();
+                    fixedQueue.add(correctClose);
+                } else {
+                    // unmatched closing tag, discard it
+                }
+            }    
         }
         
         

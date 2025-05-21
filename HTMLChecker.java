@@ -75,6 +75,8 @@ public class HTMLChecker {
 }
 
 /*
+
+
  ===============================
  Processing tests/test1.html...
  ===============================
@@ -129,5 +131,4 @@ public class HTMLChecker {
  Failed tests: test1.html test2.html test3.html test4.html test5.html 
  ===============================
  
-
 */
