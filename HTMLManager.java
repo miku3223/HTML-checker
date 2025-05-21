@@ -37,8 +37,21 @@ public class HTMLManager {
     public void fixHTML(){
         Stack<HTMLTag> stack = new Stack<>();
         Queue<HTMLTag> fixedQueue = new LinkedList<>();
+        
+        while (!tags.isEmpty()) {
+            HTMLTag current = tags.remove();
 
-
+            if (current.isSelfClosing()) {
+                fixedQueue.add(current);
+            } else if (current.isOpening()) {
+                fixedQueue.add(current);
+                stack.push(current);
+            } 
+        
+        }
+        
+        
+        
 
         tags = fixedQueue;
     }    
