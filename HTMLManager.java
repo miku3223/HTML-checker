@@ -17,6 +17,30 @@ public class HTMLManager {
     // Returns the queue of HTMLTags being managed
     public Queue<HTMLTag> getTags() {
         return tags;
+    }
+    
+    // Returns a string representation of the tags in the queue
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        int size = tags.size();
+        for (int i = 0; i < size; i++) {
+            HTMLTag tag = tags.remove();
+            sb.append(tag.toString().trim());
+            tags.add(tag);        
+        }
+        return sb.toString();
+
+    
+    }
+    
+    // Fixes the HTML structure
+    public void fixHTML(){
+        Stack<HTMLTag> stack = new Stack<>();
+        Queue<HTMLTag> fixedQueue = new LinkedList<>();
+
+
+
+        tags = fixedQueue;
     }    
     
 }
