@@ -12,6 +12,11 @@ public class HTMLManager {
         for (HTMLTag tag : html) {
             tags.add(tag);
         }
+    }
+    
+    // Returns the queue of HTMLTags being managed
+    public Queue<HTMLTag> getTags() {
+        return tags;
     }    
     
 }
